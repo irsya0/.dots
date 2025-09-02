@@ -13,16 +13,11 @@ return function(s)
     --- Header
     local function header()
         local awesomewm = wibox.widget({
-            {
-                image = beautiful.distro,
-                resize = true,
-                halign = "center",
-                valign = "center",
-                widget = wibox.widget.imagebox,
-            },
-            strategy = "exact",
-            height = dpi(30),
-            widget = wibox.container.constraint,
+            widget = wibox.widget.textbox,
+            font = beautiful.logo_font .. " 24",
+            markup = beautiful.logo,
+            halign = "center",
+            valign = "center"
         })
 
         local function search_box()
@@ -62,7 +57,7 @@ return function(s)
                 },
                 forced_height = dpi(35),
                 shape = helpers.ui.rrect(beautiful.border_radius),
-                bg = beautiful.wibar_bg,
+                bg = beautiful.darker_black,
                 widget = wibox.container.background(),
             })
 
@@ -130,14 +125,14 @@ return function(s)
                             require("ui.panels.central-panel.stats"),
                             layout = wibox.layout.fixed.horizontal
                         },
-                         require("ui.panels.central-panel.music-player"),
+                        require("ui.panels.central-panel.music-player"),
                         layout = wibox.layout.fixed.vertical,
                     },
                     margins = dpi(10),
                     widget = wibox.container.margin,
                 },
                 shape = helpers.ui.prrect(beautiful.border_radius * 2, true, true, false, false),
-                bg = beautiful.wibar_bg,
+                bg = beautiful.darker_black,
                 widget = wibox.container.background,
             },
             layout = wibox.layout.align.vertical,

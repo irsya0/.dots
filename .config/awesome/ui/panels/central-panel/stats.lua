@@ -298,4 +298,4 @@ local stats = wibox.widget({
     layout = wibox.layout.stack
 })
 
-return create_boxed_widget(stats, dpi(300), dpi(300), beautiful.widget_bg)
+return create_boxed_widget(stats, dpi(300), dpi(300), beautiful.black)

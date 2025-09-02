@@ -1,27 +1,10 @@
 local awful = require("awful")
 local gears = require("gears")
-local beautiful = require("beautiful")
-local dpi = beautiful.xresources.apply_dpi
-local widgets = require("ui.widgets")
 local apps = require("configuration.apps")
+local button = require("ui.panels.central-panel.quick-settings.button")
 
 --- Lock Widget
 --- ~~~~~~~~~~~~~~~~~~~~
-
-local function button(icon)
-    return widgets.button.text.state({
-        forced_width = dpi(60),
-        forced_height = dpi(60),
-        normal_bg = beautiful.one_bg3,
-        normal_shape = gears.shape.circle,
-        on_normal_bg = beautiful.accent,
-        text_normal_bg = beautiful.accent,
-        text_on_normal_bg = beautiful.one_bg3,
-        font = beautiful.icon_font .. "Round ",
-        size = 17,
-        text = icon,
-    })
-end
 
 local widget = button("")
 

@@ -1,6 +1,5 @@
 local gitsigns = require("gitsigns")
 local utils = require "core.utils"
-dofile(vim.g.base46_cache .. "git")
 
 local options = {
   signs = {

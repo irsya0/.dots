@@ -2,17 +2,8 @@ return {
     {
         "goolord/alpha-nvim",
         lazy = false,
-        dependencies = { "ahujaankush/base46" },
         config = function()
             require "plugins.configs.interface.alpha"
-        end,
-    },
-    {
-        "ahujaankush/base46",
-        branch = "v2.0",
-        lazy = false,
-        build = function()
-            require("base46").load_all_highlights()
         end,
     },
     {
@@ -81,8 +72,6 @@ return {
             require("core.utils").load_mappings "whichkey"
         end,
         config = function()
-            dofile(vim.g.base46_cache .. "whichkey")
-            -- require("which-key").register(require("core.utils").load_config().mappings)
             require("which-key").setup()
         end,
     },

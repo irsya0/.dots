@@ -17,11 +17,16 @@ local icons         = require("icons")
 --- ░▀░░░▀▀▀░▀░▀░░▀░░▀▀▀
 
 --- Ui Fonts
-theme.font_name     = "Inter "
+theme.font_name     = "Ndot77JPExtended "
 theme.font          = theme.font_name .. "Medium 10"
 
 --- Icon Fonts
 theme.icon_font     = "Material Icons "
+
+theme.logo          = "雨"
+theme.logo_font     = "Ndot77JPExtended Medium "
+
+theme.name          = "Īrṣyā"
 
 --- ░█▀▀░█▀█░█░░░█▀█░█▀▄░█▀▀
 --- ░█░░░█░█░█░░░█░█░█▀▄░▀▀█
@@ -118,7 +123,7 @@ theme.titlebar_bg = theme.darker_black
 theme.titlebar_fg = theme.white
 
 --- Wibar
-theme.wibar_bg = theme.darker_black .. "AA"
+theme.wibar_bg = theme.darker_black .. "00"
 theme.wibar_height = dpi(45)
 
 --- Music
@@ -168,7 +173,7 @@ theme.border_color_fullscreen = theme.titlebar_bg
 
 --- Corner Radius
 theme.window_rounded = false
-theme.border_radius = dpi(5)
+theme.border_radius = dpi(8)
 
 --- Edge snap
 theme.snap_bg = theme.color8
@@ -267,5 +272,14 @@ theme.machi_switcher_border_opacity = 0.25
 theme.machi_editor_border_color = theme.lighter_black
 theme.machi_editor_border_opacity = 0.25
 theme.machi_editor_active_opacity = 0.25
+
+--- Desktop
+theme.desktop_icon_size = dpi(50)
+theme.desktop_widget_block_size = 75
+theme.desktop_widget_margin_size = 25
+theme.widget_block = function(n)
+    return theme.desktop_widget_block_size * math.max(n, 0) + theme.desktop_widget_margin_size * math.max(n - 1, 0)
+end
+
 
 return theme

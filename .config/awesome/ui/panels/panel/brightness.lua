@@ -23,7 +23,7 @@ return function()
         start_angle = math.pi + math.pi / 2,
     })
 
-    local locked = true
+    local locked = false
 
     local brightness_percentage_text = wibox.widget({
         id = "percent_text",
@@ -71,7 +71,7 @@ return function()
     })
 
     -- The emits will come from the global keybind
-    awesome.connect_signal("widget::brightness", function(value)
+    awesome.connect_signal("signal::brightness::get", function(value)
         brightness:set_value(value)
         brightness_percentage_text:set_text(math.floor(value) .. "%")
     end)

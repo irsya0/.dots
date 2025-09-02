@@ -1,16 +1,15 @@
-dofile(vim.g.base46_cache .. "lsp")
 -- require "nvchad_ui.lsp"
-
 local M = {}
 local lspconfig = require "lspconfig"
 local utils = require "core.utils"
+local config = require "core.config"
 local servers = require("core.servers").lsp
 -- export on_attach & capabilities for custom lspconfigs
 
 M.on_attach = function(client, bufnr)
     utils.load_mappings("lspconfig", { buffer = bufnr })
 
-    if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
+    if not config.ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
         client.server_capabilities.semanticTokensProvider = nil
     end
 end
@@ -75,7 +74,6 @@ lspconfig.lua_ls.setup {
                 library = {
                     [vim.fn.expand "$VIMRUNTIME/lua"] = true,
                     [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-                    [vim.fn.stdpath "data" .. "/lazy/extensions/nvchad_types"] = true,
                     [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
                 },
                 maxPreload = 100000,

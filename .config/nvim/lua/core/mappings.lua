@@ -91,6 +91,71 @@ M.general = {
     },
 }
 
+M.nvterm = {
+    t = {
+        -- toggle in terminal mode
+        ["<A-i>"] = {
+            function()
+                require("ui.components.term").toggle { pos = "float", id = "float-term" }
+            end,
+            "Toggle floating term",
+        },
+
+        ["<A-c>"] = {
+            function()
+                require("ui.components.term").toggle { pos = "sp", id = "horizontal-term" }
+            end,
+            "Toggle horizontal term",
+        },
+
+        ["<A-v>"] = {
+            function()
+                require("ui.components.term").toggle { pos = "vsp", id = "vertical-term" }
+            end,
+            "Toggle vertical term",
+        },
+    },
+
+    n = {
+        -- toggle in terminal mode
+        ["<A-i>"] = {
+            function()
+                require("ui.components.term").toggle { pos = "float", id = "float-term" }
+            end,
+            "Toggle floating term",
+        },
+
+        ["<A-c>"] = {
+            function()
+                require("ui.components.term").toggle { pos = "sp", id = "horizontal-term" }
+            end,
+            "Toggle horizontal term",
+        },
+
+        ["<A-v>"] = {
+            function()
+                require("ui.components.term").toggle { pos = "vsp", id = "vertical-term" }
+            end,
+            "Toggle vertical term",
+        },
+
+        -- new
+        ["<leader>ct"] = {
+            function()
+                require("ui.components.term").new { pos = "sp" }
+            end,
+            "New horizontal term",
+        },
+
+        ["<leader>vt"] = {
+            function()
+                require("ui.components.term").new { pos = "vsp" }
+            end,
+            "New vertical term",
+        },
+    },
+}
+
 M.highstr = {
     plugin = true,
     v = {
@@ -149,7 +214,7 @@ M.lspconfig = {
     n = {
         ["<leader>ra"] = {
             function()
-                require("custom.ui.lsp.renamer")()
+                require("ui.lsp.renamer")()
             end,
             "lsp rename"
         },
@@ -215,6 +280,13 @@ M.lspconfig = {
         ["<leader>wl"] = {
             function()
                 print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+            end,
+            "List workspace folders",
+        },
+
+        ["<leader>le"] = {
+            function()
+                vim.diagnostic.open_float()
             end,
             "List workspace folders",
         },
@@ -296,18 +368,13 @@ M.telescope = {
         -- pick a hidden term
         ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "Pick hidden term" },
 
+        -- themes
+        ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Pick theme" },
+
         -- lsp & code naivgation
         ["<leader>tt"] = { "<CMD> Telescope diagnostics bufnr=0 <CR>", "Buffer diagnostics" },
         ["<leader>li"] = { "<CMD> Telescope lsp_document_symbols <CR>", "Buffer symbols" },
         ["<leader>gd"] = { "<CMD> Telescope lsp_definitions<CR>", "Buffer symbols" },
-
-        -- theme switcher
-        ["<leader>th"] = {
-            function()
-                vim.cmd "Telescope themes"
-            end,
-            "Nvchad themes",
-        },
 
         ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
     },
@@ -330,73 +397,6 @@ M.refactoring = {
                 require("telescope").extensions.refactoring.refactors()
             end,
             "refactoring",
-        },
-    },
-}
-
-M.nvterm = {
-    plugin = true,
-
-    t = {
-        -- toggle in terminal mode
-        ["<A-i>"] = {
-            function()
-                require("nvterm.terminal").toggle "float"
-            end,
-            "Toggle floating term",
-        },
-
-        ["<A-c>"] = {
-            function()
-                require("nvterm.terminal").toggle "horizontal"
-            end,
-            "Toggle horizontal term",
-        },
-
-        ["<A-v>"] = {
-            function()
-                require("nvterm.terminal").toggle "vertical"
-            end,
-            "Toggle vertical term",
-        },
-    },
-
-    n = {
-        -- toggle in normal mode
-        ["<A-i>"] = {
-            function()
-                require("nvterm.terminal").toggle "float"
-            end,
-            "Toggle floating term",
-        },
-
-        ["<A-c>"] = {
-            function()
-                require("nvterm.terminal").toggle "horizontal"
-            end,
-            "Toggle horizontal term",
-        },
-
-        ["<A-v>"] = {
-            function()
-                require("nvterm.terminal").toggle "vertical"
-            end,
-            "Toggle vertical term",
-        },
-
-        -- new
-        ["<leader>ct"] = {
-            function()
-                require("nvterm.terminal").new "horizontal"
-            end,
-            "New horizontal term",
-        },
-
-        ["<leader>vt"] = {
-            function()
-                require("nvterm.terminal").new "vertical"
-            end,
-            "New vertical term",
         },
     },
 }

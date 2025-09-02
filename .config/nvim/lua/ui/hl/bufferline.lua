@@ -1,0 +1,32 @@
+local colors = require("ui.theme").get_theme_tb "base_30"
+
+return {
+  BufferLineBackground = { bg = colors.black2, fg = colors.one_bg3 },
+  BufferLineBuffer = { bg = colors.black2, fg = colors.one_bg3 },
+  BufferLineBufferSelected = { bg = colors.blue, bold = true, fg = colors.black },
+  BufferLineBufferVisible = { bg = colors.black2, fg = colors.blue },
+  BufferLineCloseButton = { bg = colors.black2, fg = colors.red },
+  BufferLineCloseButtonSelected = { bg = colors.blue, fg = colors.black },
+  BufferLineCloseButtonVisible = { bg = colors.black2, fg = colors.red },
+  BufferLineDuplicate = { bg = colors.black2, fg = colors.one_bg3 },
+  BufferLineDuplicateSelected = { bg = colors.black, fg = colors.one_bg3 },
+  BufferLineDuplicateVisible = { bg = colors.black2, fg = colors.one_bg3 },
+  BufferLineFill = { bg = colors.black, fg = colors.one_bg3 },
+  BufferLineIndicatorSelected = { bg = colors.blue, fg = colors.blue },
+  BufferLineIndicatorVisible = { bg = colors.black2, fg = colors.black },
+  BufferLineModified = { bg = colors.black2, fg = colors.green },
+  BufferLineModifiedSelected = { bg = colors.blue, fg = colors.black },
+  BufferLineModifiedVisible = { bg = colors.black2, fg = colors.green },
+  BufferLineOffsetSeparator = { bg = colors.blue, fg = colors.blue },
+  BufferLinePick = { bg = colors.black2, bold = true, fg = colors.purple },
+  BufferLinePickSelected = { bg = colors.blue, bold = true, fg = colors.yellow },
+  BufferLinePickVisible = { bg = colors.black2, bold = true, fg = colors.sun },
+  BufferLineSeparator = { bg = colors.black2, fg = colors.black2 },
+  BufferLineSeparatorSelected = { bg = colors.blue, fg = colors.blue },
+  BufferLineSeparatorVisible = { bg = colors.black2, fg = colors.black2 },
+  BufferLineTabClose = { bg = colors.black, fg = colors.red },
+  BufferLineTab = { bg = colors.black2, fg = colors.one_bg3 },
+  BufferLineTabSelected = { bg = colors.black, bold = true, fg = colors.blue },
+  BufferLineTabSeparator = { bg = colors.black2, fg = colors.black2 },
+  BufferLineTabSeparatorSelected = { fg = "black" }
+}

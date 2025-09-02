@@ -1,5 +1,4 @@
 local trouble = require("trouble")
-dofile(vim.g.base46_cache .. "trouble")
 
 ---@class trouble.Mode: trouble.Config,trouble.Section.spec
 ---@field desc? string

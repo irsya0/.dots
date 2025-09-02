@@ -1,24 +1,6 @@
 return {
-    -- autosave
     {
-        "NvChad/nvterm",
-        init = function()
-            require("core.utils").load_mappings "nvterm"
-        end,
-        config = function()
-            require "custom.utils.term_override"
-            require "plugins.configs.code.nvterm"
-        end,
-    },
-    -- competitive programming
-    {
-        "ahujaankush/competitest.nvim",
-        cmd = "CompetiTest",
-        dependencies = 'MunifTanjim/nui.nvim',
-        config = function() require('competitest').setup() end,
-    },
-    {
-        "NvChad/nvim-colorizer.lua",
+        "catgoose/nvim-colorizer.lua",
         event = "BufRead",
         config = function()
             require "plugins.configs.code.colorizer"

@@ -1,5 +1,3 @@
-dofile(vim.g.base46_cache .. "syntax")
-
 local options = {
   ensure_installed = require("core.servers").ts,
   auto_install = true,
@@ -28,8 +26,6 @@ local options = {
     enable = true,
     use_languagetree = true,
   },
-
-  additional_vim_regex_highlighting = { "org" },
 
   indent = { enable = true },
  }

@@ -3,12 +3,12 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 local naughty = require("naughty")
-local decorations = require("ui.decorations")
 local bling = require("modules.bling")
 local playerctl_daemon = require("signal.playerctl")
 local machi = require("modules.layout-machi")
 local helpers = require("helpers")
 local apps = require("configuration.apps")
+local scratchpad = require("ui.scratchpad")
 
 --- Make key easier to call
 --- ~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,6 +27,11 @@ awful.keyboard.append_global_keybindings({
     awful.key({ mod }, "Return", function()
         awful.spawn(apps.default.terminal)
     end, { description = "open terminal", group = "app" }),
+
+    awful.key({ mod, shift }, "Return", function()
+        scratchpad.toggle_term(awful.screen.focused())
+    end, { description = "toggle scratchpad", group = "app" }),
+
 
     --- App launcher
     awful.key({ mod }, "d", function()
@@ -411,15 +416,13 @@ awful.keyboard.append_global_keybindings({
     }),
 })
 
--- Screen
+-- Panel
 -----------
---awful.keyboard.append_global_keybindings({
--- No need for these (single screen setup)
---awful.key({ superkey, ctrlkey }, "j", function () awful.screen.focus_relative( 1) end,
---{description = "focus the next screen", group = "screen"}),
---awful.key({ superkey, ctrlkey }, "k", function () awful.screen.focus_relative(-1) end,
---{description = "focus the previous screen", group = "screen"}),
---})
+awful.keyboard.append_global_keybindings({
+    -- No need for these (single screen setup)
+    awful.key({ mod, shift }, "t", function() awesome.emit_signal("panel::visibility::toggle") end,
+        { description = "focus the next screen", group = "screen" }),
+})
 
 awful.mouse.append_global_mousebindings({
     --- Left click

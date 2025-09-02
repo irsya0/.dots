@@ -24,7 +24,7 @@ return function()
         start_angle = math.pi + math.pi / 2,
     })
 
-    local locked = true
+    local locked = false
 
     local mic_percentage_text = wibox.widget({
         id = "percent_text",
@@ -73,7 +73,7 @@ return function()
     })
 
     -- The emits will come from the global keybind
-    awesome.connect_signal("widget::microphone", function(value, muted)
+    awesome.connect_signal("signal::microphone::get", function(value, muted)
         mic:set_value(value)
         mic_percentage_text:set_text(math.floor(value) .. "%")
         mic.colors = { muted and mute_color or active_color }

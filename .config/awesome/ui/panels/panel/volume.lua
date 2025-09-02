@@ -24,7 +24,7 @@ return function()
         start_angle = math.pi + math.pi / 2,
     })
 
-    local locked = true
+    local locked = false
 
     local volume_percentage_text = wibox.widget({
         id = "percent_text",
@@ -73,7 +73,7 @@ return function()
     })
 
     -- The emits will come from the global keybind
-    awesome.connect_signal("widget::volume", function(value, muted)
+    awesome.connect_signal("signal::volume::get", function(value, muted)
         volume:set_value(value)
         volume_percentage_text:set_text(math.floor(value) .. "%")
         volume.colors = { muted and mute_color or active_color }

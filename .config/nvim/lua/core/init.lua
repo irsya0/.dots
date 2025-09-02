@@ -1,10 +1,8 @@
 local opt = vim.opt
 local g = vim.g
-local config = require("core.utils").load_config()
+local config = require("core.config")
 
 -------------------------------------- globals -----------------------------------------
-g.nvchad_theme = config.ui.theme
-g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 g.toggle_theme_icon = "   "
 g.transparency = config.ui.transparency
 
@@ -66,8 +64,8 @@ g.maplocalelader = "\\"
 vim.api.nvim_command "set guifont=JetBrainsMono\\ Nerd\\ Font,Cooper\\ Hewitt:h13"
 
 g.neovide_refresh_rate = 144
-g.neovide_transparency = 0.8
-g.neovide_scale_factor = 1
+g.neovide_opacity = 0.9
+g.neovide_scale_factor = 0.6
 
 g.neovide_no_idle = true
 g.neovide_profiler = false
@@ -81,18 +79,18 @@ g.neovide_cursor_trail_length = 1
 g.neovide_cursor_antialiasing = true
 g.neovide_cursor_unfocused_outline_width = 0.125
 
-g.neovide_cursor_vfx_mode = "railgun"
-g.neovide_cursor_vfx_opacity = 85.0
+g.neovide_cursor_vfx_mode = "pixiedust"
+g.neovide_cursor_vfx_opacity = 60.0
 g.neovide_cursor_vfx_particle_lifetime = 1
 g.neovide_cursor_vfx_particle_density = 50.0
 g.neovide_cursor_vfx_particle_speed = 5.0
 g.neovide_cursor_vfx_particle_phase = 1.5
 g.neovide_cursor_vfx_particle_curl = 1.0
 
-g.neovide_padding_top = 20
-g.neovide_padding_left = 20
-g.neovide_padding_right = 20
-g.neovide_padding_bottom = 20
+g.neovide_padding_top = 5
+g.neovide_padding_left = 5
+g.neovide_padding_right = 5
+g.neovide_padding_bottom = 5
 
 g.instant_username = "aahuja"
 
@@ -136,38 +134,5 @@ autocmd("FileType", {
     pattern = "qf",
     callback = function()
         vim.opt_local.buflisted = false
-    end,
-})
-
--- reload some chadrc options on-save
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = vim.tbl_map(
-        vim.fs.normalize,
-        vim.fn.glob(vim.fn.stdpath "config" .. "/lua/custom/**/*.lua", true, true, true)
-    ),
-    group = vim.api.nvim_create_augroup("ReloadNvChad", {}),
-
-    callback = function(opts)
-        local fp = vim.fn.fnamemodify(vim.fs.normalize(vim.api.nvim_buf_get_name(opts.buf)), ":r") --[[@as string]]
-        local app_name = vim.env.NVIM_APPNAME and vim.env.NVIM_APPNAME or "nvim"
-        local module = string.gsub(fp, "^.*/" .. app_name .. "/lua/", ""):gsub("/", ".")
-
-        require("plenary.reload").reload_module "base46"
-        require("plenary.reload").reload_module(module)
-        require("plenary.reload").reload_module "custom.chadrc"
-
-        config = require("core.utils").load_config()
-
-        vim.g.nvchad_theme = config.ui.theme
-        vim.g.transparency = config.ui.transparency
-
-        -- statusline
-        require("plenary.reload").reload_module("custom.ui.statusline." .. config.ui.statusline.theme)
-        vim.opt.statusline = "%!v:lua.require('custom.ui.statusline." .. config.ui.statusline.theme .. "').run()"
-
-        require("plenary.reload").reload_module "custom.ui.tabufline.modules"
-        vim.opt.tabline = "%!v:lua.require('custom.ui.tabufline.modules').run()"
-
-        require("base46").load_all_highlights()
     end,
 })

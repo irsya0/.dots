@@ -41,6 +41,7 @@ ruled.client.connect_signal("request::rules", function()
 				"Spotify",
 				"Org.gnome.Nautilus",
 				"Peek",
+                "spad"
 			},
 		},
 		properties = {

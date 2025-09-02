@@ -1,0 +1,18 @@
+return {
+    require("ui.hl.alpha"),
+    require("ui.hl.blankline"),
+    require("ui.hl.bufferline"),
+    require("ui.hl.cmp"),
+    require("ui.hl.defaults"),
+    require("ui.hl.devicons"),
+    require("ui.hl.git"),
+    require("ui.hl.lsp"),
+    require("ui.hl.mason"),
+    require("ui.hl.nvimtree"),
+    require("ui.hl.scrollbar"),
+    require("ui.hl.statusline"),
+    require("ui.hl.syntax"),
+    require("ui.hl.telescope"),
+    require("ui.hl.treesitter"),
+    require("ui.hl.whichkey"),
+}

@@ -25,7 +25,7 @@ for _, x in pairs(spec_tab) do
   vim.list_extend(plugins, require(x))
 end
 
-local config = require("core.utils").load_config()
+local config = require("core.config")
 
 if #config.plugins > 0 then
   table.insert(plugins, { import = config.plugins })

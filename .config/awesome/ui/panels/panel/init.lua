@@ -9,7 +9,6 @@ local widgets    = require("ui.widgets")
 local wbutton    = require("ui.widgets.button")
 local animation  = require("modules.animation")
 local apps       = require("configuration.apps")
-local gcolor     = require("gears.color")
 
 --- Modern Top Panel
 --- ~~~~~~~~~~~~~~~~~~~
@@ -20,9 +19,11 @@ return function(s)
 
     local launcher = function()
         local icon = wibox.widget({
-            widget = wibox.widget.imagebox,
-            image = beautiful.distro,
-            resize = true,
+            widget = wibox.widget.textbox,
+            font = beautiful.logo_font .. "18",
+            markup = beautiful.logo,
+            halign = "center",
+            valign = "center"
         })
 
         local widget = wibox.widget({
@@ -171,11 +172,6 @@ return function(s)
     --- ~~~~~~~
     local keyboard = require("ui.panels.panel.keyboard")
 
-    --- Power & Nvidia
-    --- ~~~~~~~
-    local function power()
-    end
-
     --- Systemtray
     --- ~~~~~~~
     local systray = require("ui.panels.panel.systray")
@@ -240,6 +236,37 @@ return function(s)
     --- ~~~~~~~~~
     local clock = function()
         local icon = require("ui.panels.panel.clock")()
+
+        local widget = wibox.widget({
+            widget = wibox.container.margin,
+            margins = {
+                top = dpi(5),
+                bottom = dpi(5)
+            },
+            wbutton.elevated.normal({
+                child = icon,
+                normal_bg = beautiful.widget_bg,
+                hover_bg = beautiful.one_bg,
+                paddings = dpi(5),
+                margins = {
+                    top = 0,
+                    left = 0,
+                    right = 0,
+                    bottom = 0
+                },
+                on_release = function(self)
+                    awful.spawn(apps.default.calendar, false)
+                end,
+            })
+        })
+
+        return widget
+    end
+
+    --- Date
+    --- ~~~~~~~~~
+    local date = function()
+        local icon = require("ui.panels.panel.date")()
 
         local widget = wibox.widget({
             widget = wibox.container.margin,
@@ -334,12 +361,13 @@ return function(s)
                     launcher(),
                     layoutbox(),
                     taglist(s),
-                    clock(),
+                    date(),
                     spacing = dpi(5),
                     layout = wibox.layout.fixed.horizontal,
                 },
                 tasklist(s),
                 {
+                    clock(),
                     battery(),
                     systray(s),
                     mic(),
@@ -356,4 +384,8 @@ return function(s)
             widget = wibox.container.margin,
         },
     })
+
+    awesome.connect_signal("panel::visibility::toggle", function()
+        s.panel.visible = not s.panel.visible
+    end)
 end

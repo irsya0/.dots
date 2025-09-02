@@ -179,7 +179,7 @@ local art_section = wibox.widget({
                     type = "linear",
                     from = { 0, 0 },
                     to = { 250, 0 },
-                    stops = { { 0, beautiful.widget_bg .. "00" }, { 1, beautiful.widget_bg .. "DD" } }
+                    stops = { { 0, beautiful.black .. "00" }, { 1, beautiful.black .. "DD" } }
                 },
                 widget = wibox.container.background,
             },
@@ -241,7 +241,7 @@ local playerctl_section = wibox.widget({
             margins = dpi(10)
         },
         shape = helpers.ui.rrect(beautiful.border_radius),
-        bg = beautiful.widget_bg,
+        bg = beautiful.black,
         widget = wibox.container.background,
     },
     widget = wibox.container.margin,

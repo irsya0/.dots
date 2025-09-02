@@ -7,13 +7,6 @@ local helpers = require("helpers")
 --- Quick Settings
 --- ~~~~~~~~~~~~~~
 
-local quick_settings_text = wibox.widget({
-    font = beautiful.font_name .. "Medium 10",
-    markup = helpers.ui.colorize_text("Quick Settings", "#666c79"),
-    valign = "center",
-    widget = wibox.widget.textbox,
-})
-
 --- Widgets
 local airplane_mode = require(... .. ".airplane-mode")
 local blue_light = require(... .. ".blue-light")
@@ -67,7 +60,7 @@ local widget = wibox.widget({
             widget = wibox.container.margin,
         },
         widget = wibox.container.background,
-        bg = beautiful.widget_bg,
+        bg = beautiful.black,
         shape = helpers.ui.rrect(beautiful.border_radius),
     },
     margins = dpi(10),

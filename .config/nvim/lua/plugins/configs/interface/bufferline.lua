@@ -1,7 +1,5 @@
 local bufferline = require("bufferline")
 
-dofile(vim.g.base46_cache .. "bufferline")
-
 local options = {
   options = {
     offsets = {

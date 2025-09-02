@@ -20,14 +20,4 @@ return {
       require "plugins.configs.telescope.telescope"
     end,
   },
-  {
-    "ziontee113/icon-picker.nvim",
-    cmd = { "IconPickerInsert", "IconPickerNormal", "IconPickerYank" },
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-    },
-    config = function()
-      require "plugins.configs.telescope.icons"
-    end,
-  },
 }

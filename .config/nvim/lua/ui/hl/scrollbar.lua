@@ -1,0 +1,25 @@
+local colors = require("ui.theme").get_theme_tb "base_30"
+
+return {
+  ScrollbarHandle = { bg = colors.one_bg2 },
+  ScrollbarCursorHandle = { bg = colors.one_bg2, fg = colors.white },
+  ScrollbarCursor = { fg = colors.white },
+  ScrollbarSearchHandle = { bg = colors.one_bg2, fg = colors.green },
+  ScrollbarSearch = { fg = colors.green },
+  ScrollbarErrorHandle = { bg = colors.one_bg2, fg = colors.red },
+  ScrollbarError = { fg = colors.red },
+  ScrollbarWarnHandle = { bg = colors.one_bg2, fg = colors.orange },
+  ScrollbarWarn = { fg = colors.orange },
+  ScrollbarInfoHandle = { bg = colors.one_bg2, fg = colors.purple },
+  ScrollbarInfo = { fg = colors.purple },
+  ScrollbarHintHandle = { bg = colors.one_bg2, fg = colors.purple },
+  ScrollbarHint = { fg = colors.purple },
+  ScrollbarMiscHandle = { bg = colors.one_bg2, fg = colors.blue },
+  ScrollbarMisc = { fg = colors.blue },
+  ScrollbarGitAdd = { fg = colors.cyan },
+  ScrollbarGitAddHandle = { bg = colors.one_bg2, fg = colors.cyan },
+  ScrollbarGitChange = { fg = colors.cyan },
+  ScrollbarGitChangeHandle = { bg = colors.one_bg2, fg = colors.cyan },
+  ScrollbarGitDelete = { fg = colors.cyan },
+  ScrollbarGitDeleteHandle = { bg = colors.one_bg2, fg = colors.cyan },
+}

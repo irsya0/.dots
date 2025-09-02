@@ -1,5 +1,4 @@
 local nvimtree = require "nvim-tree"
-dofile(vim.g.base46_cache .. "nvimtree")
 
 local options = {
   filters = {
