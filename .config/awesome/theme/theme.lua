@@ -21,7 +21,7 @@ theme.font_name     = "Ndot77JPExtended "
 theme.font          = theme.font_name .. "Medium 10"
 
 --- Icon Fonts
-theme.icon_font     = "Material Icons "
+theme.icon_font     = "JetBrainsMono Nerd Font "
 
 theme.logo          = "雨"
 theme.logo_font     = "Ndot77JPExtended Medium "

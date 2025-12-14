@@ -18,10 +18,10 @@ return function(s)
         ontop = true,
         visible = false,
         placement = function(w)
-            awful.placement.top_right(w)
+            awful.placement.top_right(w, { honor_workarea = true, margins = 2 * beautiful.useless_gap })
             awful.placement.maximize_vertically(
                 w,
-                { honor_workarea = true }
+                { honor_workarea = true, margins = 2 * beautiful.useless_gap }
             )
         end,
         widget = {
@@ -37,8 +37,8 @@ return function(s)
                 },
                 layout = wibox.layout.flex.vertical,
             },
-            shape = helpers.ui.prrect(beautiful.border_radius * 2, true, false, false, false),
-            bg = beautiful.wibar_bg,
+            shape = helpers.ui.prrect(beautiful.window_rounded and beautiful.border_radius or 0, true, false, false, true),
+            bg = beautiful.black,
             widget = wibox.container.background,
         },
     })

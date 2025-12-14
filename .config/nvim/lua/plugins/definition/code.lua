@@ -1,20 +1,14 @@
 return {
     {
-        "catgoose/nvim-colorizer.lua",
-        event = "BufRead",
-        config = function()
-            require "plugins.configs.code.colorizer"
+        "eero-lehtinen/oklch-color-picker.nvim",
+        event = "VeryLazy",
+        version = "*",
+        init = function()
+            require("core.utils").load_mappings "oklch"
         end,
-    },
-    {
-        "uga-rosa/ccc.nvim",
-        cmd = { "CccConvert", "CccPick" },
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        },
         config = function()
-            require "plugins.configs.code.ccc"
-        end,
+            require "plugins.configs.code.oklch"
+        end
     },
     -- git stuff
     {

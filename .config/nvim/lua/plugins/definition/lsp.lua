@@ -81,13 +81,6 @@ return {
     },
     -- lua
     {
-        "folke/neodev.nvim", -- neovim development
-        ft = { "lua" },
-        config = function()
-            require "plugins.configs.lsp.neodev"
-        end,
-    },
-    {
         "nvim-neotest/neotest",
         event = "LspAttach",
         dependencies = {

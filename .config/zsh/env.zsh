@@ -18,8 +18,8 @@ export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
 # DEFAULT APPS
 export TERMINAL=foot
 export BROWSER=firefox
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=zeditor
+export EDITOR=zeditor
 
 # SUDO
 export SUDO_PROMPT=' Password: '

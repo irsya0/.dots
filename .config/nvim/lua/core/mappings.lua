@@ -506,4 +506,16 @@ M.gitsigns = {
     },
 }
 
+M.oklch = {
+    plugin = true,
+    n = {
+        ["<leader>v"] = {
+            function()
+                require("oklch-color-picker").pick_under_cursor()
+            end,
+            "Color pick under cursor",
+        }
+    }
+}
+
 return M

@@ -27,9 +27,5 @@ end
 
 local config = require("core.config")
 
-if #config.plugins > 0 then
-  table.insert(plugins, { import = config.plugins })
-end
-
 vim.loader.enable()
 require("lazy").setup(plugins, config.lazy_nvim)

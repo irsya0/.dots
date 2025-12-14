@@ -150,7 +150,8 @@ return function(s)
         visible = false,
         placement = function(w)
             awful.placement.bottom_left(w, {
-                margins = { bottom = beautiful.wibar_height + 2 * beautiful.useless_gap, left = 2 * beautiful.useless_gap },
+                honor_workarea = true,
+                margins = 2 * beautiful.useless_gap
             })
         end,
         widget = widget_contents

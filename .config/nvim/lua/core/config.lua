@@ -35,8 +35,6 @@ M.ui = {
 
 M.mappings = require("core.mappings")
 
-M.plugins = ""
-
 M.lazy_nvim = require "plugins.configs.lazy_nvim" -- config for lazy.nvim startup options
 
 return M
