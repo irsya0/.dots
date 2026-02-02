@@ -1,0 +1,19 @@
+return vim.tbl_extend(
+    "force",
+    require("ui.colors.highlights.alpha"),
+    require("ui.colors.highlights.blankline"),
+    require("ui.colors.highlights.bufferline"),
+    require("ui.colors.highlights.cmp"),
+    require("ui.colors.highlights.defaults"),
+    require("ui.colors.highlights.devicons"),
+    require("ui.colors.highlights.git"),
+    require("ui.colors.highlights.lsp"),
+    require("ui.colors.highlights.mason"),
+    require("ui.colors.highlights.nvimtree"),
+    require("ui.colors.highlights.scrollbar"),
+    require("ui.colors.highlights.statusline"),
+    require("ui.colors.highlights.syntax"),
+    require("ui.colors.highlights.telescope"),
+    require("ui.colors.highlights.treesitter"),
+    require("ui.colors.highlights.whichkey")
+)

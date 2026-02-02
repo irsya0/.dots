@@ -1,0 +1,32 @@
+local base32 = require("ui.colors.engine").get_theme_tb "base_30"
+
+return {
+  BufferLineBackground = { bg = base32.black2, fg = base32.one_bg3 },
+  BufferLineBuffer = { bg = base32.black2, fg = base32.one_bg3 },
+  BufferLineBufferSelected = { bg = base32.blue, bold = true, fg = base32.black },
+  BufferLineBufferVisible = { bg = base32.black2, fg = base32.blue },
+  BufferLineCloseButton = { bg = base32.black2, fg = base32.red },
+  BufferLineCloseButtonSelected = { bg = base32.blue, fg = base32.black },
+  BufferLineCloseButtonVisible = { bg = base32.black2, fg = base32.red },
+  BufferLineDuplicate = { bg = base32.black2, fg = base32.one_bg3 },
+  BufferLineDuplicateSelected = { bg = base32.black, fg = base32.one_bg3 },
+  BufferLineDuplicateVisible = { bg = base32.black2, fg = base32.one_bg3 },
+  BufferLineFill = { bg = base32.black, fg = base32.one_bg3 },
+  BufferLineIndicatorSelected = { bg = base32.blue, fg = base32.blue },
+  BufferLineIndicatorVisible = { bg = base32.black2, fg = base32.black },
+  BufferLineModified = { bg = base32.black2, fg = base32.green },
+  BufferLineModifiedSelected = { bg = base32.blue, fg = base32.black },
+  BufferLineModifiedVisible = { bg = base32.black2, fg = base32.green },
+  BufferLineOffsetSeparator = { bg = base32.blue, fg = base32.blue },
+  BufferLinePick = { bg = base32.black2, bold = true, fg = base32.purple },
+  BufferLinePickSelected = { bg = base32.blue, bold = true, fg = base32.yellow },
+  BufferLinePickVisible = { bg = base32.black2, bold = true, fg = base32.sun },
+  BufferLineSeparator = { bg = base32.black2, fg = base32.black2 },
+  BufferLineSeparatorSelected = { bg = base32.blue, fg = base32.blue },
+  BufferLineSeparatorVisible = { bg = base32.black2, fg = base32.black2 },
+  BufferLineTabClose = { bg = base32.black, fg = base32.red },
+  BufferLineTab = { bg = base32.black2, fg = base32.one_bg3 },
+  BufferLineTabSelected = { bg = base32.black, bold = true, fg = base32.blue },
+  BufferLineTabSeparator = { bg = base32.black2, fg = base32.black2 },
+  BufferLineTabSeparatorSelected = { fg = "black" }
+}

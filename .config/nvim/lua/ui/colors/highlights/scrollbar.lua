@@ -1,0 +1,25 @@
+local base32 = require("ui.colors.engine").get_theme_tb "base_30"
+
+return {
+  ScrollbarHandle = { bg = base32.one_bg2 },
+  ScrollbarCursorHandle = { bg = base32.one_bg2, fg = base32.white },
+  ScrollbarCursor = { fg = base32.white },
+  ScrollbarSearchHandle = { bg = base32.one_bg2, fg = base32.green },
+  ScrollbarSearch = { fg = base32.green },
+  ScrollbarErrorHandle = { bg = base32.one_bg2, fg = base32.red },
+  ScrollbarError = { fg = base32.red },
+  ScrollbarWarnHandle = { bg = base32.one_bg2, fg = base32.orange },
+  ScrollbarWarn = { fg = base32.orange },
+  ScrollbarInfoHandle = { bg = base32.one_bg2, fg = base32.purple },
+  ScrollbarInfo = { fg = base32.purple },
+  ScrollbarHintHandle = { bg = base32.one_bg2, fg = base32.purple },
+  ScrollbarHint = { fg = base32.purple },
+  ScrollbarMiscHandle = { bg = base32.one_bg2, fg = base32.blue },
+  ScrollbarMisc = { fg = base32.blue },
+  ScrollbarGitAdd = { fg = base32.cyan },
+  ScrollbarGitAddHandle = { bg = base32.one_bg2, fg = base32.cyan },
+  ScrollbarGitChange = { fg = base32.cyan },
+  ScrollbarGitChangeHandle = { bg = base32.one_bg2, fg = base32.cyan },
+  ScrollbarGitDelete = { fg = base32.cyan },
+  ScrollbarGitDeleteHandle = { bg = base32.one_bg2, fg = base32.cyan },
+}
